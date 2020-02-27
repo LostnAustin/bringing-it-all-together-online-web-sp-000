@@ -76,7 +76,7 @@ class Dog
     sql = <<-SQL
     UPDATE dogs SET name = ?, breed = ? WHERE id = ?
     SQL
-    DB[:conn].execute(sql, self.name, self.album, self.id)
+    DB[:conn].execute(sql, self.name, self.album, id)
     else
       dog = self.new(id: id, name: name, breed: breed)
       dog

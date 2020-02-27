@@ -48,5 +48,10 @@ class Dog
 # binding.pry
   end
 
+  def self.create(hash)
+    dog = Dog.new(id: id, name: name, breed: breed)
+    dog
+  end
+
 
 end

@@ -52,7 +52,7 @@ class Dog
     binding.pry
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
     dog = Dog.new(id: @id,  name: self.name, breed: self.breed)
-    
+
     dog
   end
 

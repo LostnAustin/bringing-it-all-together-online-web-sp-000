@@ -73,9 +73,13 @@ class Dog
 
   def self.find_or_create_by(id)
     if self.id
-      self.find_by_id (id)
+    sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
+    DB[:conn].execute(sql, self.name, self.album, self.id)
     else
-      self.create
+      sql = <<-SQL
+        SELECT * FROM dogs WHERE id = ?
+      SQL
+      DB[:conn].execute(sql, self.name, self.album, self.id)
     end
   end
 

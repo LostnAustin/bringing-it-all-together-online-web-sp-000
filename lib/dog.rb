@@ -76,7 +76,7 @@ class Dog
       UPDATE dogs SET name = ?, breed = ?
       WHERE id = ?
     SQL
-    DB[:conn].execute(sal, self.name, self.grade, self.id)
+    DB[:conn].execute(sql, self.name, self.grade, self.id)
   end
 
   def self.find_or_create_by(id:, name:, breed:)

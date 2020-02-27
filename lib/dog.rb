@@ -55,9 +55,9 @@ class Dog
   end
 
   def self.new_from_db(array)
-    id: id = array[0]
-    name: name= array[1]
-    breed: breed = array[2]
+    id = array[0]
+    name = array[1]
+    breed = array[2]
     dog = Dog.new(id, name, breed)
     dog
   end

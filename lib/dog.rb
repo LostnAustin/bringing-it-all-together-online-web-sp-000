@@ -66,7 +66,7 @@ class Dog
     sql = <<-SQL
       SELECT * FROM dogs WHERE dogs.id = ? LIMIT 1
     SQL
-      results = DB[:conn].execute(sql, id).flatten
+      results = DB[:conn].execute(sql, id)
       dog = Dog.new(id: results[0], name: results[1], breed: results[2])
       dog
   end

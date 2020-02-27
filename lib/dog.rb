@@ -77,6 +77,6 @@ class Dog
     else
       self.create
     end
-
+  end
 
 end

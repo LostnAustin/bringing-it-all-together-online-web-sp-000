@@ -54,5 +54,9 @@ class Dog
     dog
   end
 
+  def self.new_from_db
+    dog = Dog.new(id:, name:, breed:)
+    dog.save
+    dog
 
 end

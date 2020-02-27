@@ -49,8 +49,6 @@ class Dog
   end
 
   def self.create(hash)
-    # binding.pry
-    # @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
     dog = Dog.new(hash)
     dog.save
     dog

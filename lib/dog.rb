@@ -71,4 +71,9 @@ class Dog
       dog
   end
 
+  def self.find_or_create_by(id)
+    if self.idea
+
+
+      dog = Dog.new(id:, name: , breed: )
 end

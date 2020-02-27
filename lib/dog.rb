@@ -64,7 +64,7 @@ class Dog
 
   def self.find_by_id(id)
     sql = <<-SQL
-      SELECT * FROM dogs WHERE id = ? LIMIT 1
+      SELECT * FROM dogs WHERE dogs.id = ? LIMIT 1
     SQL
       results = DB[:conn].execute(sql, id).flatten
       dog = Dog.new(id: results[0], name: results[1], breed: results[2])

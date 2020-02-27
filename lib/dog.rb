@@ -78,5 +78,5 @@ class Dog
       self.create
     end
 
-    
+
 end

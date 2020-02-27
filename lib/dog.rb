@@ -55,12 +55,20 @@ class Dog
   end
 
   def self.new_from_db(array)
-    # binding.pry
     id = array[0]
     name = array[1]
     breed = array[2]
     dog = self.new(id: id, name: name, breed: breed)
     dog
+  end
+
+  def self.find_by_id(id)
+    sql = <<-SQL
+      SELECT * FROM dogs WHERE dog.id = ? LIMIT 1
+    SQL
+      results = DB[:conn].execute(sql, id).flatten
+      dog = Dog.new(id: results[0], name: results[1], breed: results[2])
+      dog
   end
 
 end

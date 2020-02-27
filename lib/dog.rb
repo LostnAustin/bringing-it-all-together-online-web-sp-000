@@ -84,7 +84,7 @@ class Dog
     binding.pry
        if !dog.empty?
 
-         dog = Dog.new(dog_info[0][0], dog_info[0][1], dog_info[0][2])
+         n_dog = Dog.new(dog[0][0], dog[0][1], dog[0][2])
 
        else
       dog = self.create(name: name, breed: breed)
